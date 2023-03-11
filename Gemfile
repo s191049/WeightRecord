@@ -93,5 +93,6 @@ gem 'rails-i18n'
 # rubocop
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
+gem 'rubocop-performance', require: false
 #CSV
 gem 'roo'
