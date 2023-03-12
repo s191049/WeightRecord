@@ -31,6 +31,10 @@ class WeightRecordsController < ApplicationController
     if @weight_record.update(weight_record_params)
       flash[:success] = "編集完了"
       redirect_to "#{weight_records_show_path}"
+    else
+      flash.now[:danger] = "編集失敗"
+      render 'show', status: :unprocessable_entity and return
+    end
   end
 
   def destroy

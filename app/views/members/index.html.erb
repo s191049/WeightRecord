@@ -1,2 +1,7 @@
-<h1>Members#index</h1>
-<p>Find me in app/views/members/index.html.erb</p>
+<h1>メンバー一覧</h1>
+<div class="d-grid gap-2">
+<% @members.each do |mem| %>
+  <p>
+    <%= link_to "#{mem.name}", members_show_path(mem.id), class: "btn btn-info container-fluid" %>
+  </p>
+<% end %>

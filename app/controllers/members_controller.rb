@@ -1,20 +1,22 @@
 class MembersController < ApplicationController
   def new
+    @member = Member.new
   end
 
   def create
     @member = Member.new(member_params)
     if @member.save
-      flash[:success] = ""
-      redirect_to cars_show_path(@member.id)
+      flash[:success] = "作成しました"
+      #redirect_to members_show_path(@member.id)
+      redirect_to members_index_path
     else
-      flash.now[:danger] = ""
+      flash.now[:danger] = "失敗しました"
       render new, status: :unprocessable_entity and return
     end
   end
 
   def index
-    @member_list = Member.all
+    @members = Member.all
   end
 
   def show
@@ -46,7 +48,7 @@ class MembersController < ApplicationController
   private
 
 
-  def mamber_params
+  def member_params
     params.require(:member).permit(:name, :height)
   end
 
