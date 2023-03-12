@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      member: 'メンバー'
+      weight_record: '体重記録'
+    attributes:
+      member:
+        name: '名前'
+        height: '身長'
+        created_at: '作成日時'
+        updated_at: '更新日時'
+
+      weight_record:
+        date: '日付'
+        weight: '体重'
+        comment: 'コメント'
+        created_at: '作成日時'
+        updated_at: '更新日時'
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+  
