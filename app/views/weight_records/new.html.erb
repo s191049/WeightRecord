@@ -1,2 +1,3 @@
-<h1>WeightRecords#new</h1>
-<p>Find me in app/views/weight_records/new.html.erb</p>
+<% provide(:title, '体重登録') %>
+<h1>体重登録</h1>
+<%= render 'weight_records/form', weight_record:@weight_record, path: weight_records_create_path, submit_text: "体重登録", is_edit: false, form_data: { turbo: false } %>

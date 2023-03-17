@@ -1,6 +1,12 @@
 class WeightRecordsController < ApplicationController
   def new
-    @weight_record = WeightRecord.new
+    if Member.all.count <= 0
+      redirect_to members_new_path
+    elsif params[:date].nil?
+      @weight_record = WeightRecord.new(date: Date.today)
+    else
+      @weight_record = WeightRecord.new(member_id:params[:member_id], date:params[:date])
+    end
   end
 
   def create

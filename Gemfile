@@ -96,3 +96,5 @@ gem 'rubocop-rails', require: false
 gem 'rubocop-performance', require: false
 #CSV
 gem 'roo'
+#Calendar
+gem 'simple_calendar'

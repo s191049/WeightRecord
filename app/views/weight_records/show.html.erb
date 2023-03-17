@@ -1,2 +1,7 @@
-<h1>WeightRecords#show</h1>
-<p>Find me in app/views/weight_records/show.html.erb</p>
+<h1><%= @weight_record.member.name + ' ' + @weight_record.date.strftime("%m/%d") %></h1>
+<p>体重<br><%= @weight_record.weight %>kg</p>
+<p>コメント<br><%= @weight_record.comment %></p>
+<div class="row">
+  <%= link_to '編集', weight_records_edit_path(@weight_record.id), class:"col btn btn-lg btn-primary" %>
+  <%= link_to '削除', weight_records_destroy_path(@weight_record.id), data: { turbo_method: :delete, turbo_confirm: "消すの？" }, class:"col btn btn-lg btn-danger" %>
+</div>

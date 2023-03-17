@@ -1,0 +1,14 @@
+<%= month_calendar events: mem_records do |d, records| %>
+  <%= d.day %>
+
+  <% records.each do |wr| %>
+    <div>
+      <%= link_to "#{wr.weight}", weight_records_show_path(wr.id) %>
+    </div>
+  <% end %>
+  <% if records.count == 0 %>
+    <div>
+      <%= link_to "未", weight_records_new_path(member_id:mem.id, date:d)%>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,27 @@
+<div class="table-responsive text-nowrap">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" class="table-fixed"></th>
+        <% ((Date.today - 6)..Date.today).each do |d| %>
+          <th scope="col"><%= d.strftime("%m/%d") %></th>
+        <% end %>
+      </tr>
+    </thread>
+    <tbody>
+      <% Member.all.each do |mem| %>
+        <tr class="table-column">
+          <th scope="row" class="table-fixed"><%= link_to mem.name, members_show_path(mem.id), class: "btn btn-primary" %></th>
+          <% WeightRecord.member_week(mem.id).each_with_index do |wr, i| %>
+            <% if wr.blank? %>
+              <td scope="row" class="table-no-data"><%= link_to "未登録", weight_records_new_path(member_id:mem.id, date:(Date.today - 6 + i) ) %></td>
+            <% else %>
+              <!-- <td scope="row"><%= wr.to_a[0].weight %>kg</td> -->
+              <td scope="row"><%= link_to "#{wr.to_a[0].weight}kg", weight_records_show_path(wr.to_a[0].id) %></td>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

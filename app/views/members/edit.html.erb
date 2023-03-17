@@ -1,2 +1,2 @@
-<h1>Members#edit</h1>
-<p>Find me in app/views/members/edit.html.erb</p>
+<h1><%= @member.name %></h1>
+<%= render 'members/form', member:@member, path: members_update_path, submit_text: "メンバー編集", form_data: { turbo: false } %>

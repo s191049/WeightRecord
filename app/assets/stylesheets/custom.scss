@@ -70,11 +70,38 @@ footer {
   }
 }
 
+.table-fixed {
+  position: sticky;
+  position: -webkit-sticky; /* safari用 */
+  left: 0;
+  z-index: 1;
+  background-color: white !important;
+}
+
+.table-no-data {
+  /* background-color: #F0F0F0; */
+  background-color: silver !important;
+}
+/*
+td {
+  background-color: #fff;
+}
+*/
+
+/*
+th {
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0;
+}
+*/
+/*
 .table-column {
   &:hover {
     background-color: #99FFFF;
   }
 }
+*/
 
 #error_explanation {
   color: red;

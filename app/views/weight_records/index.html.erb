@@ -1,2 +1,12 @@
-<h1>WeightRecords#index</h1>
-<p>Find me in app/views/weight_records/index.html.erb</p>
+<h1>最近の記録</h1>
+
+<!--
+<% Member.all.each do |mem| %>
+  <%= link_to "#{mem.name}", members_show_path(mem.id) %><br>
+  <% mem.weight_records.order(date: :desc).limit(7).each do |wr| %>
+    <%= wr.date %>@<%= wr.weight %>kg<br>
+  <% end %>
+<% end %>
+-->
+
+<%= render 'weight_records/index_table' %>

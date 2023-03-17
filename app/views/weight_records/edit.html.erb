@@ -1,2 +1,2 @@
-<h1>WeightRecords#edit</h1>
-<p>Find me in app/views/weight_records/edit.html.erb</p>
+<h1>編集　<%= @weight_record.member.name + ' ' + @weight_record.date.strftime("%m/%d") %></h1>
+<%= render 'weight_records/form', weight_record: @weight_record, path: weight_records_update_path, submit_text: '体重編集', is_edit: true, form_data: { turbo: false } %>

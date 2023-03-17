@@ -1,0 +1,31 @@
+<%= form_with(model: weight_record, url: path, data: form_data, autocomplete: "off") do |f| %>
+
+<%= render 'shared/error_messages', object: f.object %>
+
+<% weight_record.member_id.blank? ? sel_params = Member.first.id : sel_params = weight_record.member_id %>
+<p class="form-group">
+  <%= f.label :登録者, class: "form-label" %><br>
+  <%= f.select :member_id, options_for_select(Member.member_select, sel_params), class: "form-select form-control" %>
+</p>
+
+<p class="form-group">
+  <%= f.label :日付, class: "form-label" %><br>
+  <%# f.date_field :date, value: Date.today %>
+  <%= f.date_field :date %>
+</p>
+
+<p class="form-group">
+  <%= f.label :体重, class: "form-label" %>
+  <%= f.number_field :weight, step:0.1, class:"form-control", autocomplete:"off" %>
+</p>
+
+<p>
+  <%= f.label :コメント%>
+  <%= %>
+</p>
+
+<p>
+  <%= f.submit submit_text, class: "btn btn-primary btn-lg container-fluid" %>
+</p>
+
+<% end %>
