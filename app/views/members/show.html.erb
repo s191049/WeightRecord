@@ -1,5 +1,9 @@
 <h1><%= @member.name  %></h1>
-<p><%= @member.height %> cm</p>
+<% if @member.height.present? %>
+  <p><%= @member.height %> cm</p>
+<% else %>
+  <p><%= link_to '身長未登録', members_edit_path(@member.id) %></p>  
+<% end %>
 <%= render 'members/show_calendar', mem_records: @member.weight_records, mem: @member %>
 
 <div class="row">

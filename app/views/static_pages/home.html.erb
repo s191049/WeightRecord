@@ -4,4 +4,8 @@
   <% Member.all.each do |mem| %>
     <p><%= link_to "#{mem.name}", weight_records_new_path(member_id: mem.id, date: Date.today), class: "btn btn-lg btn-info container-fluid" %></p>
   <% end %>
+  <%# if Member.all.count == 0 %>
+    <p><%= link_to '新規メンバー登録', members_new_path, class: "btn btn-primary btn-lg container-fluid" %></p>
+  <%# end %>
+
 </div>
